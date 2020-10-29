@@ -28,7 +28,6 @@
 % -------------------------------------------------------------------------
 clearvars;
 close all;
-warning off;
 clc;
 
 % -------------------------------------------------------------------------
@@ -45,8 +44,8 @@ cd(dataFolder);
 % -------------------------------------------------------------------------
 % SET SUBJECT INFO
 % -------------------------------------------------------------------------
-Subject.id   = 'RS001';
-Subject.side = 'R'; % R or L
+Subject.id     = 'RS001';
+Subject.side   = 'R'; % R or L
 disp(['Subject ID: ',Subject.id]);
 disp(['Assessed side: ',Subject.side]);
 
@@ -62,7 +61,7 @@ legend off;
 
 % Get the bone geometry from STL file
 % -------------------------------------------------------------------------
-stlFile                   = [Subject.id,'_',Subject.side,'_Mesh_HumerusWithCluster.stl'];
+stlFile                   = 'RS001_R_Mesh_HumerusWithCluster.stl';
 Bone(1).name              = 'RHumerus';
 temp                      = stlread(stlFile);
 Bone(1).Geometry.vertices = temp.Points;
@@ -181,7 +180,7 @@ plot3(Bone(1).Marker.cRHUM04(1,1),...
 
 % Get the bone geometry from STL file
 % -------------------------------------------------------------------------
-stlFile                   = [Subject.id,'_',Subject.side,'_Mesh_ClavicleWithCluster.stl'];
+stlFile                   = 'RS001_R_Mesh_ClavicleWithCluster.stl';
 Bone(2).name              = 'RClavicule';
 temp                      = stlread(stlFile);
 Bone(2).Geometry.vertices = temp.Points;
@@ -279,7 +278,7 @@ plot3(Bone(2).Marker.cRCLA04(1,1),...
 
 % Get the bone geometry from STL file
 % -------------------------------------------------------------------------
-stlFile                   = [Subject.id,'_',Subject.side,'_Mesh_ScapulaWithCluster.stl';
+stlFile                   = 'Mesh_R_ScapulaWithCluster.stl';
 Bone(3).name              = 'RScapula';
 temp                      = stlread(stlFile);
 Bone(3).Geometry.vertices = temp.Points;

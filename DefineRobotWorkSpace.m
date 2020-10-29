@@ -28,8 +28,8 @@
 % -------------------------------------------------------------------------
 clearvars;
 close all;
-clc;
 warning off;
+clc;
 
 % -------------------------------------------------------------------------
 % SET FOLDERS
@@ -118,7 +118,7 @@ tMarker = PredictMissingMarkers(tMarker); % Interpolate markers trajectory
 % Smooth trajectories using a lowpass Butterworth filter
 for j = 1:size(markerNames,1)
     Marker.(markerNames{j}) = tMarker(:,(3*j)-2:3*j); % Extract interpolated data
-    [B,A]                       = butter(4,6/(fMarker/2),'low'); % Low pass filter (Butterworth 4nd order, 6 Hz)
+    [B,A]                   = butter(2,6/(fMarker/2),'low'); % Low pass filter (Butterworth 4nd order, 6 Hz)
     Marker.(markerNames{j}) = filtfilt(B,A,Marker.(markerNames{j}));
     Marker.(markerNames{j}) = [Marker.(markerNames{j})(:,1) ... % Modify the ICS
                                 Marker.(markerNames{j})(:,3) ...
