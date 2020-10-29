@@ -13,8 +13,6 @@
 %                It is part of the toolkit grouping several methods used in 
 %                the RoboShoulder project, a joined project with the HEPIA 
 %                school at Geneva.
-% Inputs       : To be defined
-% Outputs      : To be defined
 % -------------------------------------------------------------------------
 % Dependencies : - Biomechanical Toolkit (BTK): https://github.com/Biomechanical-ToolKit/BTKCore
 %                - PredictMissingMarkers: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152616
@@ -38,6 +36,7 @@ warning off;
 % -------------------------------------------------------------------------
 toolboxFolder = 'C:\Users\moissene\Documents\Switchdrive\Projets\RoboShoulder\Données\Roboshoulder_toolbox\';
 dataFolder    = 'C:\Users\moissene\Documents\Switchdrive\Projets\RoboShoulder\Données\RS001\Mocap\manual_motions\';
+exportFolder  = 'C:\Users\moissene\Documents\Switchdrive\Projets\RoboShoulder\Données\RS001\Matlab\';
 depFolder     = [toolboxFolder,'dependencies\']; % These binaries are prepared for a recent version of Matlab and Windows 8 or newer
 addpath(toolboxFolder);
 addpath(genpath(depFolder));
@@ -812,4 +811,5 @@ quiver3(0,0,0,0,0,1,200,'Color','blue');
 %% ------------------------------------------------------------------------
 % EXPORT RESULTS
 % -------------------------------------------------------------------------
-save([Subject.id,'_',Subject.side,'DefineRobotWorkSpace.mat']);
+cd(exportFolder);
+save([Subject.id,'_',Subject.side,'_DefineRobotWorkSpace.mat']);
