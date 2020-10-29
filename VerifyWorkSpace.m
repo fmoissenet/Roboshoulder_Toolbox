@@ -13,8 +13,6 @@
 %                It is part of the toolkit grouping several methods used in 
 %                the RoboShoulder project, a joined project with the HEPIA 
 %                school at Geneva.
-% Inputs       : To be defined
-% Outputs      : To be defined
 % -------------------------------------------------------------------------
 % Dependencies : - Biomechanical Toolkit (BTK): https://github.com/Biomechanical-ToolKit/BTKCore
 %                - PredictMissingMarkers: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152616
@@ -285,6 +283,6 @@ quiver3(0,0,0,0,0,1,200,'Color','blue');
 %% ------------------------------------------------------------------------
 % EXPORT RESULTS
 % -------------------------------------------------------------------------
-clear dataFolder depFolder i iframe j n f toolboxFolder X_flange Y_flange Z_flange;
 cd(exportFolder);
+clear dataFolder depFolder Event exportFolder j k toolboxFolder;
 save([Subject.id,'_',Subject.side,'_VerifyWorkSpace.mat']);
